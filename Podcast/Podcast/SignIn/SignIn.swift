@@ -26,7 +26,7 @@ class SignIn {
     private var signInModel : SignInModel
     
     
-    func signIn () {
+    func signInRequest (completionHandler: @escaping (Result<JWTToken>) -> Void) {
         let url = "http://localhost:3000/api/login"
         let params = ["email": signInModel.email,  "password": signInModel.password]
         Alamofire.request(url, method: .post, parameters: params, encoding: JSONEncoding.default)
@@ -34,13 +34,14 @@ class SignIn {
                             
                 
                 if (dataResponse.error != nil) {
-                    print(dataResponse.error)
+                    completionHandler(.failure(dataResponse.error!))
+                    print(dataResponse.error!)
+                    return
                 }
             
                 do {
                     let userJwt = try JSONDecoder().decode(JWTToken.self, from: dataResponse.data!)
-                    print(userJwt)
-                    
+                    completionHandler(.success(userJwt))
                 } catch {
                     print(error)
                 }

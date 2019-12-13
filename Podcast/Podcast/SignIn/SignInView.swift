@@ -11,9 +11,10 @@ import SwiftUI
 struct SignInView: View {
     @State var email : String = ""
     @State var password : String = ""
-    @State var spin = false
     @State var animate = false
-    @State var isHidden = false
+    
+    @ObservedObject var startAnimation = AnimationListen()
+
 
     var body: some View {
         
@@ -53,28 +54,41 @@ struct SignInView: View {
                                     .frame(height: 50)
                                 .foregroundColor(Color(red: 227, green: 0, blue: 152))
                             HStack(){
-                                    ProgressCircle(animate: self.$animate)
+                                if self.animate {
+                                    ProgressCircle(startAnimation: self.startAnimation)
                                         .frame(width: 40, height: 40)
-                                        .foregroundColor(Color.white.opacity(self.animate ? 1 : 0))
+                                    .foregroundColor(Color.white)
                                         .padding(.leading , 10)
+                                    
+                                }
                                         
-                                
-                                    
-                                    
                                 Spacer()
                                 Text("Sign In")
                                     .foregroundColor(Color.white)
-                                Spacer()
+                                
+                                 if self.animate {
+                                     Spacer()
+                                }
+//
                                 Spacer()
                             }
                           
                         }
                     }
                     .padding(.top , 50 )
-
                     
-                  
-                    
+                    Spacer()
+                    HStack {
+                        Spacer()
+                      Button(action: {}) {
+                            Text("Don't have an account")
+                                .foregroundColor(Color.gray)
+                        Text("Sign Up")
+                               .foregroundColor(Color(red: 227, green: 0, blue: 152))
+             
+                        }
+                        Spacer()
+                    }
             }
                 .padding([.leading] , geomtry.size.width * 0.24)
                 .padding([.top] , geomtry.size.height * 0.09)
@@ -85,20 +99,30 @@ struct SignInView: View {
                     
             
         }
-
-    }
+     }
     }
     
     
     func signin () {
         
-//        isHidden.toggle()
         animate.toggle()
-        
-//        let signInModel = SignInModel(email: email, password: password)
-//        let signIn = SignIn(signInModel: signInModel)
-//        signIn.signIn()
-        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+            self.startAnimation.startAnimation.toggle()
+
+        }
+        let signInModel = SignInModel(email: email, password: password)
+        let signIn = SignIn(signInModel: signInModel)
+        signIn.signInRequest { (res) in
+            switch res {
+                case .success(let jwt):
+                    self.animate.toggle()
+                    print(jwt)
+                case .failure(let err ):
+                     print("Show err")
+                     print(err)
+            }
+        }
+
     }
     
 }
@@ -125,7 +149,8 @@ struct SignInForm  : View{
                           .foregroundColor(Color.gray)
                       
                       CustomTextField(placeholder:
-                            Text("Email")           .foregroundColor(Color.gray),
+                            Text("Email")
+                                .foregroundColor(Color.gray),
                                 text: self.$email
                              )
                            .foregroundColor(Color.white)
