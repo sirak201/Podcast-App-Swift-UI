@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CEBD289123A33BC6007C1377 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBD289023A33BC6007C1377 /* ProgressBar.swift */; };
+		CEBD289323A33C65007C1377 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBD289223A33C65007C1377 /* CustomTextField.swift */; };
+		CEC3C06F23A2B0CE0002BFF7 /* SignInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3C06E23A2B0CE0002BFF7 /* SignInModel.swift */; };
+		CEC3C07123A2B1640002BFF7 /* SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3C07023A2B1640002BFF7 /* SignIn.swift */; };
 		CEE4482F23A1F152006F7B93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE4482E23A1F152006F7B93 /* AppDelegate.swift */; };
 		CEE4483123A1F152006F7B93 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE4483023A1F152006F7B93 /* SceneDelegate.swift */; };
 		CEE4483323A1F152006F7B93 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE4483223A1F152006F7B93 /* ContentView.swift */; };
@@ -15,7 +19,7 @@
 		CEE4483B23A1F155006F7B93 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEE4483923A1F155006F7B93 /* LaunchScreen.storyboard */; };
 		CEE4484623A1F155006F7B93 /* PodcastTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE4484523A1F155006F7B93 /* PodcastTests.swift */; };
 		CEE4485123A1F155006F7B93 /* PodcastUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE4485023A1F155006F7B93 /* PodcastUITests.swift */; };
-		CEE4486223A1F402006F7B93 /* SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE4486123A1F402006F7B93 /* SignIn.swift */; };
+		CEE4486223A1F402006F7B93 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE4486123A1F402006F7B93 /* SignInView.swift */; };
 		CEE4486523A20B7E006F7B93 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = CEE4486423A20B7E006F7B93 /* Alamofire */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +41,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CEBD289023A33BC6007C1377 /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
+		CEBD289223A33C65007C1377 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		CEC3C06E23A2B0CE0002BFF7 /* SignInModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInModel.swift; sourceTree = "<group>"; };
+		CEC3C07023A2B1640002BFF7 /* SignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignIn.swift; sourceTree = "<group>"; };
 		CEE4482B23A1F152006F7B93 /* Podcast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Podcast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEE4482E23A1F152006F7B93 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEE4483023A1F152006F7B93 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,7 +59,7 @@
 		CEE4484C23A1F155006F7B93 /* PodcastUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PodcastUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEE4485023A1F155006F7B93 /* PodcastUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastUITests.swift; sourceTree = "<group>"; };
 		CEE4485223A1F155006F7B93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CEE4486123A1F402006F7B93 /* SignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignIn.swift; sourceTree = "<group>"; };
+		CEE4486123A1F402006F7B93 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +88,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CEBD288F23A33B9F007C1377 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				CEBD289023A33BC6007C1377 /* ProgressBar.swift */,
+				CEBD289223A33C65007C1377 /* CustomTextField.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
 		CEE4482223A1F152006F7B93 = {
 			isa = PBXGroup;
 			children = (
@@ -106,7 +123,8 @@
 				CEE4482E23A1F152006F7B93 /* AppDelegate.swift */,
 				CEE4483023A1F152006F7B93 /* SceneDelegate.swift */,
 				CEE4483223A1F152006F7B93 /* ContentView.swift */,
-				CEE4485E23A1F250006F7B93 /* Signup */,
+				CEE4485E23A1F250006F7B93 /* SignIn */,
+				CEBD288F23A33B9F007C1377 /* Utility */,
 				CEE4483423A1F155006F7B93 /* Assets.xcassets */,
 				CEE4483923A1F155006F7B93 /* LaunchScreen.storyboard */,
 				CEE4483C23A1F155006F7B93 /* Info.plist */,
@@ -141,12 +159,14 @@
 			path = PodcastUITests;
 			sourceTree = "<group>";
 		};
-		CEE4485E23A1F250006F7B93 /* Signup */ = {
+		CEE4485E23A1F250006F7B93 /* SignIn */ = {
 			isa = PBXGroup;
 			children = (
-				CEE4486123A1F402006F7B93 /* SignIn.swift */,
+				CEE4486123A1F402006F7B93 /* SignInView.swift */,
+				CEC3C06E23A2B0CE0002BFF7 /* SignInModel.swift */,
+				CEC3C07023A2B1640002BFF7 /* SignIn.swift */,
 			);
-			path = Signup;
+			path = SignIn;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,9 +307,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEE4482F23A1F152006F7B93 /* AppDelegate.swift in Sources */,
+				CEC3C07123A2B1640002BFF7 /* SignIn.swift in Sources */,
 				CEE4483123A1F152006F7B93 /* SceneDelegate.swift in Sources */,
 				CEE4483323A1F152006F7B93 /* ContentView.swift in Sources */,
-				CEE4486223A1F402006F7B93 /* SignIn.swift in Sources */,
+				CEBD289323A33C65007C1377 /* CustomTextField.swift in Sources */,
+				CEE4486223A1F402006F7B93 /* SignInView.swift in Sources */,
+				CEC3C06F23A2B0CE0002BFF7 /* SignInModel.swift in Sources */,
+				CEBD289123A33BC6007C1377 /* ProgressBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

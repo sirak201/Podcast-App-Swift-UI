@@ -7,11 +7,13 @@
 //
 
 import SwiftUI
-import Alamofire
 
-struct SignIn: View {
+struct SignInView: View {
     @State var email : String = ""
     @State var password : String = ""
+    @State var spin = false
+    @State var animate = false
+    @State var isHidden = false
 
     var body: some View {
         
@@ -50,9 +52,22 @@ struct SignIn: View {
                             RoundedRectangle(cornerRadius: 8)
                                     .frame(height: 50)
                                 .foregroundColor(Color(red: 227, green: 0, blue: 152))
+                            HStack(){
+                                    ProgressCircle(animate: self.$animate)
+                                        .frame(width: 40, height: 40)
+                                        .foregroundColor(Color.white.opacity(self.animate ? 1 : 0))
+                                        .padding(.leading , 10)
+                                        
                                 
-                            Text("Sign In")
-                               .foregroundColor(Color.white)
+                                    
+                                    
+                                Spacer()
+                                Text("Sign In")
+                                    .foregroundColor(Color.white)
+                                Spacer()
+                                Spacer()
+                            }
+                          
                         }
                     }
                     .padding(.top , 50 )
@@ -64,6 +79,10 @@ struct SignIn: View {
                 .padding([.leading] , geomtry.size.width * 0.24)
                 .padding([.top] , geomtry.size.height * 0.09)
                 .padding(.trailing , geomtry.size.height * 0.09)
+                
+                
+        
+                    
             
         }
 
@@ -73,6 +92,12 @@ struct SignIn: View {
     
     func signin () {
         
+//        isHidden.toggle()
+        animate.toggle()
+        
+//        let signInModel = SignInModel(email: email, password: password)
+//        let signIn = SignIn(signInModel: signInModel)
+//        signIn.signIn()
         
     }
     
@@ -80,7 +105,7 @@ struct SignIn: View {
 
 struct SignIn_Previews: PreviewProvider {
     static var previews: some View {
-        SignIn()
+        SignInView()
     }
 }
 
@@ -141,16 +166,11 @@ struct SignInForm  : View{
 }
 
 
-struct CustomTextField: View {
-    var placeholder: Text
-    @Binding var text: String
-    var editingChanged: (Bool)->() = { _ in }
-    var commit: ()->() = { }
 
-    var body: some View {
-        ZStack(alignment: .leading) {
-            if text.isEmpty { placeholder }
-            TextField("", text: $text, onEditingChanged: editingChanged, onCommit: commit)
-        }
-    }
-}
+
+
+
+ 
+    
+    
+
