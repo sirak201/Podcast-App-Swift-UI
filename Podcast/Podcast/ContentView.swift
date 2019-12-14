@@ -12,8 +12,44 @@ import SwiftUI
 //rgb(14,11,32) purple
 
 struct ContentView: View {
+    
+    
+    
+    
+    
+    init() {
+        UITabBar.appearance().barTintColor = #colorLiteral(red: 0.0536696743, green: 0.04404159331, blue: 0.1236245599, alpha: 1)
+    }
+
+
+    
     var body: some View {
-        Text("Hello, World!")
+       TabView {
+            HomeView()
+                .tabItem {
+                    Image(systemName: "house.fill")
+                        
+                    Text("Home")
+                }.tag(0)
+        
+            ExploreView()
+                .tabItem {
+                    Image(systemName: "mappin.and.ellipse")
+                    Text("Explore")
+                }.tag(1)
+            RecordView()
+                .tabItem {
+                    Image(systemName: "music.mic")
+                    Text("Record")
+                }.tag(2)
+            RecordView()
+                     .tabItem {
+                         Image(systemName: "person.fill")
+                         Text("Account")
+                     }.tag(3)
+        }
+       .accentColor(Color.init(red: 227, green: 0, blue: 152))
+       
     }
 }
 

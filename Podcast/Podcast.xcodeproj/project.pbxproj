@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		CEBD289123A33BC6007C1377 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBD289023A33BC6007C1377 /* ProgressBar.swift */; };
 		CEBD289323A33C65007C1377 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBD289223A33C65007C1377 /* CustomTextField.swift */; };
+		CEBD289923A4ADDE007C1377 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBD289823A4ADDE007C1377 /* HomeView.swift */; };
+		CEBD289B23A4ADF1007C1377 /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBD289A23A4ADF1007C1377 /* ExploreView.swift */; };
+		CEBD289D23A4AE03007C1377 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBD289C23A4AE03007C1377 /* AccountView.swift */; };
+		CEBD289F23A4AE1B007C1377 /* RecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBD289E23A4AE1B007C1377 /* RecordView.swift */; };
+		CEBD28A123A57A74007C1377 /* PodcastModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBD28A023A57A74007C1377 /* PodcastModel.swift */; };
+		CEBD28A323A57B75007C1377 /* ExploreListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBD28A223A57B74007C1377 /* ExploreListView.swift */; };
+		CEBD28A523A57DEF007C1377 /* ExploreAsset.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEBD28A423A57DEF007C1377 /* ExploreAsset.xcassets */; };
 		CEC3C06F23A2B0CE0002BFF7 /* SignInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3C06E23A2B0CE0002BFF7 /* SignInModel.swift */; };
 		CEC3C07123A2B1640002BFF7 /* SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3C07023A2B1640002BFF7 /* SignIn.swift */; };
 		CEE4482F23A1F152006F7B93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE4482E23A1F152006F7B93 /* AppDelegate.swift */; };
@@ -43,6 +50,13 @@
 /* Begin PBXFileReference section */
 		CEBD289023A33BC6007C1377 /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 		CEBD289223A33C65007C1377 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		CEBD289823A4ADDE007C1377 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		CEBD289A23A4ADF1007C1377 /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
+		CEBD289C23A4AE03007C1377 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
+		CEBD289E23A4AE1B007C1377 /* RecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordView.swift; sourceTree = "<group>"; };
+		CEBD28A023A57A74007C1377 /* PodcastModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastModel.swift; sourceTree = "<group>"; };
+		CEBD28A223A57B74007C1377 /* ExploreListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreListView.swift; sourceTree = "<group>"; };
+		CEBD28A423A57DEF007C1377 /* ExploreAsset.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ExploreAsset.xcassets; sourceTree = "<group>"; };
 		CEC3C06E23A2B0CE0002BFF7 /* SignInModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInModel.swift; sourceTree = "<group>"; };
 		CEC3C07023A2B1640002BFF7 /* SignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignIn.swift; sourceTree = "<group>"; };
 		CEE4482B23A1F152006F7B93 /* Podcast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Podcast.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -97,6 +111,41 @@
 			path = Utility;
 			sourceTree = "<group>";
 		};
+		CEBD289423A4AD57007C1377 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				CEBD289823A4ADDE007C1377 /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		CEBD289523A4AD65007C1377 /* Explore */ = {
+			isa = PBXGroup;
+			children = (
+				CEBD289A23A4ADF1007C1377 /* ExploreView.swift */,
+				CEBD28A023A57A74007C1377 /* PodcastModel.swift */,
+				CEBD28A223A57B74007C1377 /* ExploreListView.swift */,
+				CEBD28A423A57DEF007C1377 /* ExploreAsset.xcassets */,
+			);
+			path = Explore;
+			sourceTree = "<group>";
+		};
+		CEBD289623A4AD99007C1377 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				CEBD289C23A4AE03007C1377 /* AccountView.swift */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		CEBD289723A4ADBF007C1377 /* Record */ = {
+			isa = PBXGroup;
+			children = (
+				CEBD289E23A4AE1B007C1377 /* RecordView.swift */,
+			);
+			path = Record;
+			sourceTree = "<group>";
+		};
 		CEE4482223A1F152006F7B93 = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +173,10 @@
 				CEE4483023A1F152006F7B93 /* SceneDelegate.swift */,
 				CEE4483223A1F152006F7B93 /* ContentView.swift */,
 				CEE4485E23A1F250006F7B93 /* SignIn */,
+				CEBD289423A4AD57007C1377 /* Home */,
+				CEBD289523A4AD65007C1377 /* Explore */,
+				CEBD289623A4AD99007C1377 /* Account */,
+				CEBD289723A4ADBF007C1377 /* Record */,
 				CEBD288F23A33B9F007C1377 /* Utility */,
 				CEE4483423A1F155006F7B93 /* Assets.xcassets */,
 				CEE4483923A1F155006F7B93 /* LaunchScreen.storyboard */,
@@ -279,6 +332,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEBD28A523A57DEF007C1377 /* ExploreAsset.xcassets in Resources */,
 				CEE4483B23A1F155006F7B93 /* LaunchScreen.storyboard in Resources */,
 				CEE4483823A1F155006F7B93 /* Preview Assets.xcassets in Resources */,
 				CEE4483523A1F155006F7B93 /* Assets.xcassets in Resources */,
@@ -306,11 +360,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEBD289923A4ADDE007C1377 /* HomeView.swift in Sources */,
+				CEBD289F23A4AE1B007C1377 /* RecordView.swift in Sources */,
 				CEE4482F23A1F152006F7B93 /* AppDelegate.swift in Sources */,
 				CEC3C07123A2B1640002BFF7 /* SignIn.swift in Sources */,
 				CEE4483123A1F152006F7B93 /* SceneDelegate.swift in Sources */,
+				CEBD289D23A4AE03007C1377 /* AccountView.swift in Sources */,
+				CEBD28A323A57B75007C1377 /* ExploreListView.swift in Sources */,
+				CEBD289B23A4ADF1007C1377 /* ExploreView.swift in Sources */,
 				CEE4483323A1F152006F7B93 /* ContentView.swift in Sources */,
 				CEBD289323A33C65007C1377 /* CustomTextField.swift in Sources */,
+				CEBD28A123A57A74007C1377 /* PodcastModel.swift in Sources */,
 				CEE4486223A1F402006F7B93 /* SignInView.swift in Sources */,
 				CEC3C06F23A2B0CE0002BFF7 /* SignInModel.swift in Sources */,
 				CEBD289123A33BC6007C1377 /* ProgressBar.swift in Sources */,

@@ -30,6 +30,7 @@ class SignIn {
         let url = "http://localhost:3000/api/login"
         let params = ["email": signInModel.email,  "password": signInModel.password]
         Alamofire.request(url, method: .post, parameters: params, encoding: JSONEncoding.default)
+                        .validate(statusCode: 200...300)
                         .responseData { (dataResponse) in
                             
                 
@@ -44,6 +45,7 @@ class SignIn {
                     completionHandler(.success(userJwt))
                 } catch {
                     print(error)
+                    completionHandler(.failure(error))
                 }
 
                }

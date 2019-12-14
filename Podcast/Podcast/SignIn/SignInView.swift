@@ -9,10 +9,11 @@
 import SwiftUI
 
 struct SignInView: View {
-    @State var email : String = ""
-    @State var password : String = ""
-    @State var animate = false
-    
+    @State private var email : String = ""
+    @State private var password : String = ""
+    @State private var animate = false
+    @State private var errorIsShowing = false
+    @State private var errorMessage = ""
     @ObservedObject var startAnimation = AnimationListen()
 
 
@@ -25,83 +26,98 @@ struct SignInView: View {
                     .resizable()
                     .scaledToFill()
                     .edgesIgnoringSafeArea(.all)
+                    .frame(maxWidth: geomtry.size.width,
+                           maxHeight: geomtry.size.height)
                 Rectangle()
                     .edgesIgnoringSafeArea(.all)
                     .foregroundColor(Color.black.opacity(0.55))
-                
-                
+                   
+                Text(self.errorMessage)
+                            .foregroundColor(Color.white)
+                            .frame(width: geomtry.size.width)
+                            .background(self.errorIsShowing ? Color.red : Color.clear)
+                            .padding(.top , -4)
+        
+                 
                 VStack(alignment: .leading , spacing: 0) {
-                    Text("SIGN IN")
+                    
+                        Text("SIGN IN")
                            .foregroundColor(Color.white)
                            .font(.largeTitle)
                            .fontWeight(.heavy)
                            .padding(.bottom , 30)
                     
-                    SignInForm(email: self.$email , password: self.$password)
-                    
-                    Button(action: {}) {
-                        Spacer()
-                        Text("Forgot Password")
-                            .foregroundColor(Color.gray)
-                            .padding([.trailing , .leading] , 30)
-                            .padding(.top , 10 )
-                        
-                    }
-                    
-                    Button(action: self.signin) {
-                        ZStack {
-                            RoundedRectangle(cornerRadius: 8)
-                                    .frame(height: 50)
-                                .foregroundColor(Color(red: 227, green: 0, blue: 152))
-                            HStack(){
-                                if self.animate {
-                                    ProgressCircle(startAnimation: self.startAnimation)
-                                        .frame(width: 40, height: 40)
-                                    .foregroundColor(Color.white)
-                                        .padding(.leading , 10)
+                        SignInForm(email: self.$email , password: self.$password)
+                            
+                                Button(action: {}) {
+                                    Spacer()
+                                    Text("Forgot Password")
+                                        .foregroundColor(Color.gray)
+                                        .padding([.trailing , .leading] , 30)
+                                        .padding(.top , 10 )
                                     
                                 }
-                                        
-                                Spacer()
-                                Text("Sign In")
-                                    .foregroundColor(Color.white)
-                                
-                                 if self.animate {
-                                     Spacer()
+                            
+                        Button(action: self.signin) {
+                            ZStack {
+                                RoundedRectangle(cornerRadius: 8)
+                                        .frame(height: 50)
+                                        .foregroundColor(Color(red: 227, green: 0, blue: 152))
+                                HStack(){
+                                    if self.animate {
+                                        ProgressCircle(startAnimation: self.startAnimation)
+                                            .frame(width: 40, height: 40)
+                                            .foregroundColor(Color.white)
+                                            .padding(.leading , 10)
+                                    }
+                                            
+                                    Spacer()
+                                    Text("Sign In")
+                                        .foregroundColor(Color.white)
+                                    
+                                     if self.animate {
+                                         Spacer()
+                                    }
+                                    Spacer()
                                 }
-//
+                              
+                            }
+                        }
+                            .padding(.top , 50 )
+                            
+                            Spacer()
+                            HStack {
+                                Spacer()
+                                Button(action: {}) {
+                                    Text("Don't have an account")
+                                    .foregroundColor(Color.gray)
+                                    Text("Sign Up")
+                                   .foregroundColor(Color(red: 227, green: 0, blue: 152))
+                     
+                                }
                                 Spacer()
                             }
-                          
-                        }
                     }
-                    .padding(.top , 50 )
-                    
-                    Spacer()
-                    HStack {
-                        Spacer()
-                      Button(action: {}) {
-                            Text("Don't have an account")
-                                .foregroundColor(Color.gray)
-                        Text("Sign Up")
-                               .foregroundColor(Color(red: 227, green: 0, blue: 152))
-             
-                        }
-                        Spacer()
-                    }
+                        .padding([.leading] , geomtry.size.width * 0.1)
+                        .padding([.top] , geomtry.size.height * 0.09)
+                        .padding(.trailing , 20)
             }
-                .padding([.leading] , geomtry.size.width * 0.24)
-                .padding([.top] , geomtry.size.height * 0.09)
-                .padding(.trailing , geomtry.size.height * 0.09)
-                
-                
-        
-                    
-            
         }
-     }
     }
     
+    
+    
+    
+}
+
+struct SignIn_Previews: PreviewProvider {
+    static var previews: some View {
+        SignInView()
+    }
+}
+
+extension SignInView {
+    // MARK: - Functions
     
     func signin () {
         
@@ -114,22 +130,18 @@ struct SignInView: View {
         let signIn = SignIn(signInModel: signInModel)
         signIn.signInRequest { (res) in
             switch res {
-                case .success(let jwt):
+                case .success(_):
                     self.animate.toggle()
-                    print(jwt)
+                    self.errorIsShowing = false
+                    self.errorMessage = ""
+
                 case .failure(let err ):
-                     print("Show err")
-                     print(err)
+                    self.animate.toggle()
+                    self.errorMessage = err.localizedDescription
+                    self.errorIsShowing = true
+                
             }
         }
-
-    }
-    
-}
-
-struct SignIn_Previews: PreviewProvider {
-    static var previews: some View {
-        SignInView()
     }
 }
 
@@ -160,7 +172,7 @@ struct SignInForm  : View{
               Rectangle()
                   .frame(height: 1)
                   .foregroundColor(Color.white)
-                  .padding([.trailing , .leading] , 10)
+                  .padding([.trailing ] , 10)
               
               ZStack {
                      Rectangle()
@@ -182,7 +194,7 @@ struct SignInForm  : View{
                  Rectangle()
                      .frame(height: 1)
                      .foregroundColor(Color.white)
-                     .padding([.trailing , .leading] , 10)
+                     .padding([.trailing] , 10)
           
                  
           }
