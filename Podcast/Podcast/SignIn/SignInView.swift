@@ -9,8 +9,8 @@
 import SwiftUI
 
 struct SignInView: View {
-    @State private var email : String = ""
-    @State private var password : String = ""
+    @State private var email : String = "dan@gmail.com"
+    @State private var password : String = "123456"
     @State private var animate = false
     @State private var errorIsShowing = false
     @State private var errorMessage = ""

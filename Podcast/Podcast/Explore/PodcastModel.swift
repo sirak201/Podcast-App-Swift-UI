@@ -8,9 +8,16 @@
 
 import Foundation
 
-struct PodcastModel : Identifiable{
+struct PodcastModel : Identifiable , Decodable  {
     var id : String
-    var name : String
+    var title : String
     var imageUrl : String
     var owner : String
+    
+    enum CodingKeys: String, CodingKey {
+             case id = "_id"
+             case title = "podcastName"
+             case imageUrl = "imageUrl"
+             case owner = "owner"
+       }
 }

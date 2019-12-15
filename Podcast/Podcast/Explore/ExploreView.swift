@@ -12,8 +12,9 @@ struct ExploreView: View {
     
 
     
+    
+    @ObservedObject var explore = Explore()
 
-    let pod = [ PodcastModel(id: "1", name: "Life Adventures", imageUrl: "Pod2", owner: "Briliant Idiots") , PodcastModel(id: "2", name: "Pray For You", imageUrl: "Pod1", owner: "Emily Rose") ,  PodcastModel(id: "3", name: "Joe Rogan EP20", imageUrl: "Pod3", owner: "Joe Rogan")]
 
     var body: some View {
 
@@ -57,7 +58,7 @@ struct ExploreView: View {
                 ScrollView(.horizontal, showsIndicators: false) {
                    
                     HStack(spacing : 20) {
-                        ForEach(pod) { pod in
+                        ForEach(explore.exploreListModels) { pod in
                             GeometryReader {_ in
                                 ExploreListView(podcastModel: pod)
                             }
@@ -72,12 +73,16 @@ struct ExploreView: View {
             
         }
         
-    }
+        }.onAppear(perform: {
+            self.explore.getNewPodcast()
+        })
         
     }
 }
 
 struct ExploreView_Previews: PreviewProvider {
+    
+
     static var previews: some View {
         ExploreView()
     }

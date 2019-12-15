@@ -16,6 +16,8 @@
 		CEBD28A123A57A74007C1377 /* PodcastModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBD28A023A57A74007C1377 /* PodcastModel.swift */; };
 		CEBD28A323A57B75007C1377 /* ExploreListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBD28A223A57B74007C1377 /* ExploreListView.swift */; };
 		CEBD28A523A57DEF007C1377 /* ExploreAsset.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEBD28A423A57DEF007C1377 /* ExploreAsset.xcassets */; };
+		CEBD28A723A5F389007C1377 /* Explore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBD28A623A5F389007C1377 /* Explore.swift */; };
+		CEBD28A923A6052C007C1377 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBD28A823A6052C007C1377 /* UserModel.swift */; };
 		CEC3C06F23A2B0CE0002BFF7 /* SignInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3C06E23A2B0CE0002BFF7 /* SignInModel.swift */; };
 		CEC3C07123A2B1640002BFF7 /* SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3C07023A2B1640002BFF7 /* SignIn.swift */; };
 		CEE4482F23A1F152006F7B93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE4482E23A1F152006F7B93 /* AppDelegate.swift */; };
@@ -57,6 +59,8 @@
 		CEBD28A023A57A74007C1377 /* PodcastModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastModel.swift; sourceTree = "<group>"; };
 		CEBD28A223A57B74007C1377 /* ExploreListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreListView.swift; sourceTree = "<group>"; };
 		CEBD28A423A57DEF007C1377 /* ExploreAsset.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ExploreAsset.xcassets; sourceTree = "<group>"; };
+		CEBD28A623A5F389007C1377 /* Explore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Explore.swift; sourceTree = "<group>"; };
+		CEBD28A823A6052C007C1377 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		CEC3C06E23A2B0CE0002BFF7 /* SignInModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInModel.swift; sourceTree = "<group>"; };
 		CEC3C07023A2B1640002BFF7 /* SignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignIn.swift; sourceTree = "<group>"; };
 		CEE4482B23A1F152006F7B93 /* Podcast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Podcast.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -123,7 +127,9 @@
 			isa = PBXGroup;
 			children = (
 				CEBD289A23A4ADF1007C1377 /* ExploreView.swift */,
+				CEBD28A623A5F389007C1377 /* Explore.swift */,
 				CEBD28A023A57A74007C1377 /* PodcastModel.swift */,
+				CEBD28A823A6052C007C1377 /* UserModel.swift */,
 				CEBD28A223A57B74007C1377 /* ExploreListView.swift */,
 				CEBD28A423A57DEF007C1377 /* ExploreAsset.xcassets */,
 			);
@@ -362,6 +368,7 @@
 			files = (
 				CEBD289923A4ADDE007C1377 /* HomeView.swift in Sources */,
 				CEBD289F23A4AE1B007C1377 /* RecordView.swift in Sources */,
+				CEBD28A723A5F389007C1377 /* Explore.swift in Sources */,
 				CEE4482F23A1F152006F7B93 /* AppDelegate.swift in Sources */,
 				CEC3C07123A2B1640002BFF7 /* SignIn.swift in Sources */,
 				CEE4483123A1F152006F7B93 /* SceneDelegate.swift in Sources */,
@@ -369,6 +376,7 @@
 				CEBD28A323A57B75007C1377 /* ExploreListView.swift in Sources */,
 				CEBD289B23A4ADF1007C1377 /* ExploreView.swift in Sources */,
 				CEE4483323A1F152006F7B93 /* ContentView.swift in Sources */,
+				CEBD28A923A6052C007C1377 /* UserModel.swift in Sources */,
 				CEBD289323A33C65007C1377 /* CustomTextField.swift in Sources */,
 				CEBD28A123A57A74007C1377 /* PodcastModel.swift in Sources */,
 				CEE4486223A1F402006F7B93 /* SignInView.swift in Sources */,
