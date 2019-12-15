@@ -14,6 +14,7 @@ struct SignInView: View {
     @State private var animate = false
     @State private var errorIsShowing = false
     @State private var errorMessage = ""
+    @State var pushActive = false
     @ObservedObject var startAnimation = AnimationListen()
 
 
@@ -83,6 +84,9 @@ struct SignInView: View {
                               
                             }
                         }
+                        .sheet(isPresented: self.$pushActive) {
+                            ContentView()
+                        }
                             .padding(.top , 50 )
                             
                             Spacer()
@@ -134,6 +138,9 @@ extension SignInView {
                     self.animate.toggle()
                     self.errorIsShowing = false
                     self.errorMessage = ""
+                    self.pushActive.toggle()
+
+                       
 
                 case .failure(let err ):
                     self.animate.toggle()

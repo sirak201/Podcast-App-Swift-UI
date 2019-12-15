@@ -10,14 +10,20 @@ import SwiftUI
 
 struct ExploreView: View {
     
+
+    
+
     let pod = [ PodcastModel(id: "1", name: "Life Adventures", imageUrl: "Pod2", owner: "Briliant Idiots") , PodcastModel(id: "2", name: "Pray For You", imageUrl: "Pod1", owner: "Emily Rose") ,  PodcastModel(id: "3", name: "Joe Rogan EP20", imageUrl: "Pod3", owner: "Joe Rogan")]
 
     var body: some View {
+
+        NavigationView {
 
         ZStack(alignment : .topLeading) {
             Rectangle()
                 .edgesIgnoringSafeArea(.all)
                 .foregroundColor(Color.init(#colorLiteral(red: 0.0536696743, green: 0.04404159331, blue: 0.1236245599, alpha: 1)))
+               
             
             ScrollView(.vertical , showsIndicators: false) {
                 
@@ -28,16 +34,17 @@ struct ExploreView: View {
                         .foregroundColor(Color.white)
                     Spacer()
                     Button(action : {}) {
-                        
-                       
+
+
                             Image(systemName: "magnifyingglass")
                                     .resizable()
                                     .foregroundColor(Color.white)
                                     .frame(width: 20, height: 20)
-                        
+
                     }
-                }.padding([.leading , .top , .trailing] , 15)
+                }.padding([.leading , .trailing] , 15)
                     .padding(.bottom , 30)
+                     .padding(.top , -30)
                 
                 HStack {
                     Text("New Podcast")
@@ -65,8 +72,8 @@ struct ExploreView: View {
             
         }
         
+    }
         
-
     }
 }
 
