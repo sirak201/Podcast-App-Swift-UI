@@ -14,13 +14,12 @@ import Combine
 
 class Explore  : ObservableObject {
     
-     @Published var exploreListModels = [PodcastModel(id: "1", title: "", imageUrl: "Pod1", owner: "")]
+    @Published var exploreListModels = [PodcastModel(id: "1", title: "Joe Rogan EP3", imageUrl: "Pod3", owner: UserModel(id: "2", fullName: "Joe Rogan", username: "joerogan", email: "joerogan123", podcastAmount: 0))]
     
     
     public func getNewPodcast() {
             let url = "http://localhost:3000/api/podcast"
-        
-            Alamofire.request(url, method: .get)
+                Alamofire.request(url, method: .get)
                             .validate(statusCode: 200...300)
                             .responseData { (dataResponse) in
                     do {

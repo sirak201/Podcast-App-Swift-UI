@@ -30,7 +30,7 @@ struct ExploreListView: View {
                                     .font(.system(size: 15, weight: .heavy, design: .default))
                                
                                     .foregroundColor(Color.white)
-                                Text(self.podcastModel.owner)
+                                Text(self.podcastModel.owner.fullName)
                                     .lineLimit(1)
                                     .font(.system(size: 12, weight: .regular, design: .default))
                                     .foregroundColor(Color.white)
@@ -51,7 +51,7 @@ struct ExploreListView: View {
 
 struct ExploreListView_Previews: PreviewProvider {
     static var previews: some View {
-        ExploreListView(podcastModel: .init(id: "1", title: "Joe Rogan Ep1", imageUrl: "Pod3", owner: "Joe Rogan"))
+        ExploreListView(podcastModel: .init(id: "1", title: "Joe Rogan Ep1", imageUrl: "Pod3", owner: UserModel(id: "", fullName: "Joe Jogan", username: "", email: "" , podcastAmount: 0)))
             .previewLayout(.fixed(width: 190, height: 190))
     }
 }

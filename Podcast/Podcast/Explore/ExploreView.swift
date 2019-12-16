@@ -59,8 +59,9 @@ struct ExploreView: View {
                    
                     HStack(spacing : 20) {
                         ForEach(explore.exploreListModels) { pod in
-                            GeometryReader {_ in
+                            GeometryReader {geometer in
                                 ExploreListView(podcastModel: pod)
+                                    .rotation3DEffect(.degrees(Double(geometer.frame(in : .global).minX) / -10) , axis : (x : 0 , y : 10.0 , z: 0))
                             }
                             .frame(width: 190,height: 190)
                             
@@ -68,7 +69,13 @@ struct ExploreView: View {
                             }
                     }
                 }
-                
+                  HStack {
+                          Text("Pocast Videos")
+                            .font(.system(size: 20))
+                              .fontWeight(.heavy)
+                              .foregroundColor(Color.white)
+                          Spacer()
+                }.padding([.leading] , 15)
             }
             
         }

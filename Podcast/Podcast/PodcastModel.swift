@@ -12,7 +12,7 @@ struct PodcastModel : Identifiable , Decodable  {
     var id : String
     var title : String
     var imageUrl : String
-    var owner : String
+    var owner : UserModel
     
     enum CodingKeys: String, CodingKey {
              case id = "_id"
