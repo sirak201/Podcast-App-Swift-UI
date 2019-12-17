@@ -14,6 +14,7 @@ struct ExploreView: View {
     
     
     @ObservedObject var explore = Explore()
+    @State var isActive = false
 
 
     var body: some View {
@@ -60,8 +61,10 @@ struct ExploreView: View {
                     HStack(spacing : 20) {
                         ForEach(explore.exploreListModels) { pod in
                             GeometryReader {geometer in
-                                ExploreListView(podcastModel: pod)
-                                    .rotation3DEffect(.degrees(Double(geometer.frame(in : .global).minX) / -10) , axis : (x : 0 , y : 10.0 , z: 0))
+                                NavigationLink(destination: PlayPodcast(podcast: pod), isActive: self.$isActive) {
+                                    ExploreListView(podcastModel: pod)
+                                        .rotation3DEffect(.degrees(Double(geometer.frame(in : .global).minX) / -10) , axis : (x : 0 , y : 10.0 , z: 0))
+                                }
                             }
                             .frame(width: 190,height: 190)
                             
@@ -76,12 +79,20 @@ struct ExploreView: View {
                               .foregroundColor(Color.white)
                           Spacer()
                 }.padding([.leading] , 15)
+                if explore.exploreVideoModels.first != nil {
+                    VideoView(podcastModel: explore.exploreVideoModels.first!)
+                        .clipped()
+                        .shadow(radius: 12)
+                   
+                        .frame(width: 380, height: 190)
+                }
             }
             
         }
         
         }.onAppear(perform: {
             self.explore.getNewPodcast()
+            self.explore.getVideoPodcasts()
         })
         
     }

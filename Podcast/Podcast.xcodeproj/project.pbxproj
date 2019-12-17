@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CE8CBFCC23A7091B00825817 /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CBFCB23A7091B00825817 /* VideoView.swift */; };
+		CE8CBFD023A80F4E00825817 /* PlayPodcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CBFCF23A80F4E00825817 /* PlayPodcast.swift */; };
 		CEBD289123A33BC6007C1377 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBD289023A33BC6007C1377 /* ProgressBar.swift */; };
 		CEBD289323A33C65007C1377 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBD289223A33C65007C1377 /* CustomTextField.swift */; };
 		CEBD289923A4ADDE007C1377 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBD289823A4ADDE007C1377 /* HomeView.swift */; };
@@ -52,6 +53,7 @@
 
 /* Begin PBXFileReference section */
 		CE8CBFCB23A7091B00825817 /* VideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoView.swift; sourceTree = "<group>"; };
+		CE8CBFCF23A80F4E00825817 /* PlayPodcast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayPodcast.swift; sourceTree = "<group>"; };
 		CEBD289023A33BC6007C1377 /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 		CEBD289223A33C65007C1377 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		CEBD289823A4ADDE007C1377 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -108,6 +110,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE8CBFCE23A80F1F00825817 /* PlayVideo */ = {
+			isa = PBXGroup;
+			children = (
+				CE8CBFCF23A80F4E00825817 /* PlayPodcast.swift */,
+			);
+			path = PlayVideo;
+			sourceTree = "<group>";
+		};
 		CEBD288F23A33B9F007C1377 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
@@ -133,6 +143,7 @@
 				CEBD28A223A57B74007C1377 /* ExploreListView.swift */,
 				CE8CBFCB23A7091B00825817 /* VideoView.swift */,
 				CEBD28A423A57DEF007C1377 /* ExploreAsset.xcassets */,
+				CE8CBFCE23A80F1F00825817 /* PlayVideo */,
 			);
 			path = Explore;
 			sourceTree = "<group>";
@@ -377,6 +388,7 @@
 				CE8CBFCC23A7091B00825817 /* VideoView.swift in Sources */,
 				CEE4483123A1F152006F7B93 /* SceneDelegate.swift in Sources */,
 				CEBD289D23A4AE03007C1377 /* AccountView.swift in Sources */,
+				CE8CBFD023A80F4E00825817 /* PlayPodcast.swift in Sources */,
 				CEBD28A323A57B75007C1377 /* ExploreListView.swift in Sources */,
 				CEBD289B23A4ADF1007C1377 /* ExploreView.swift in Sources */,
 				CEE4483323A1F152006F7B93 /* ContentView.swift in Sources */,

@@ -13,11 +13,13 @@ struct PodcastModel : Identifiable , Decodable  {
     var title : String
     var imageUrl : String
     var owner : UserModel
+    var type : String
     
     enum CodingKeys: String, CodingKey {
              case id = "_id"
              case title = "podcastName"
              case imageUrl = "imageUrl"
              case owner = "owner"
+             case type = "type"
        }
 }

@@ -51,7 +51,7 @@ struct ExploreListView: View {
 
 struct ExploreListView_Previews: PreviewProvider {
     static var previews: some View {
-        ExploreListView(podcastModel: .init(id: "1", title: "Joe Rogan Ep1", imageUrl: "Pod3", owner: UserModel(id: "", fullName: "Joe Jogan", username: "", email: "" , podcastAmount: 0)))
+        ExploreListView(podcastModel: .init(id: "1", title: "Joe Rogan Ep1", imageUrl: "Pod3", owner: UserModel(id: "", fullName: "Joe Jogan", username: "", email: "" , podcastAmount: 0) , type : "audio"))
             .previewLayout(.fixed(width: 190, height: 190))
     }
 }
