@@ -10,6 +10,7 @@ import SwiftUI
 
 struct PlayPodcast: View {
     var podcast : PodcastModel
+    @State var startAnimating = false
     var body: some View {
         GeometryReader {
                 geometry in
@@ -19,10 +20,18 @@ struct PlayPodcast: View {
                     .foregroundColor(Color.init(#colorLiteral(red: 0.06274510175, green: 0, blue: 0.1921568662, alpha: 1)))
                     .edgesIgnoringSafeArea(.all)
                 VStack {
-                    Image("Pod3")
-                        .resizable()
-                        .clipShape(Circle())
-                        .frame(width: 250, height: 250)
+                    ZStack {
+                        Image("Pod3")
+                        .renderingMode(Image.TemplateRenderingMode?.init(Image  .TemplateRenderingMode.original))
+                            .resizable()
+                            .clipShape(Circle())
+                            .frame(width: 250, height: 250)
+                            .rotationEffect(.degrees(self.startAnimating ? 0 : 360))
+                            .animation(Animation.linear(duration: 3.5).repeatForever(autoreverses: false))
+                        Circle()
+                            .frame(width: 50, height: 50)
+                            .foregroundColor(Color.init(#colorLiteral(red: 0.06274510175, green: 0, blue: 0.1921568662, alpha: 1)))
+                    }
                     Text(self.podcast.title)
                         .font(.largeTitle)
                         .fontWeight(.heavy)
@@ -107,6 +116,9 @@ struct PlayPodcast: View {
 
                 }
             }
+            .onAppear(perform: {
+                self.startAnimating = true
+            })
             
         }
     }

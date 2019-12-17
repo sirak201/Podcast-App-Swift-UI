@@ -61,10 +61,21 @@ struct ExploreView: View {
                     HStack(spacing : 20) {
                         ForEach(explore.exploreListModels) { pod in
                             GeometryReader {geometer in
-                                NavigationLink(destination: PlayPodcast(podcast: pod), isActive: self.$isActive) {
-                                    ExploreListView(podcastModel: pod)
-                                        .rotation3DEffect(.degrees(Double(geometer.frame(in : .global).minX) / -10) , axis : (x : 0 , y : 10.0 , z: 0))
-                                }
+                                
+                                ExploreListView(podcastModel: pod)
+                                    .onTapGesture {
+                                        self.isActive.toggle()
+                                    }
+                                    .sheet(isPresented: self.$isActive) {
+                                        PlayPodcast(podcast: pod)
+                                    }
+                            
+                                .rotation3DEffect(.degrees(Double(geometer.frame(in : .global).minX) / -10) , axis : (x : 0 , y : 10.0 , z: 0))
+                            
+                                             
+                 
+                                
+
                             }
                             .frame(width: 190,height: 190)
                             
@@ -94,6 +105,9 @@ struct ExploreView: View {
             self.explore.getNewPodcast()
             self.explore.getVideoPodcasts()
         })
+        .sheet(isPresented: self.$isActive) {
+            PlayPodcast(podcast: .init(id: "1", title: "Joe Rogan Ep1", imageUrl: "Pod3", owner: UserModel(id: "", fullName: "Joe Rogan", username: "", email: "" , podcastAmount: 0) , type : "audio"))
+        }
         
     }
 }

@@ -18,6 +18,7 @@ struct ExploreListView: View {
                 
                 Image(self.podcastModel.imageUrl)
                         .resizable()
+                        .renderingMode(.original)
                         .aspectRatio(contentMode: .fill)
                         .frame(maxWidth: geometry.size.width, maxHeight: geometry.size.height)
                 VStack {

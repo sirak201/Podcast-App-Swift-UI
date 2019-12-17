@@ -11,6 +11,7 @@ import SwiftUI
 struct VideoView: View {
     
    var podcastModel : PodcastModel
+   @State var pushActive = false
 
     var body: some View {
         
@@ -59,7 +60,9 @@ struct VideoView: View {
              
                 
             }
-            }
+            }  .sheet(isPresented: self.$pushActive) {
+                    PlayPodcast(podcast: PodcastModel(id: "1", title: "Joe Rogan EP3", imageUrl: "Pod3", owner: UserModel(id: "", fullName: "Joe Jogan", username: "", email: "" , podcastAmount: 0), type: "video"))
+                }
         
     }
 }
